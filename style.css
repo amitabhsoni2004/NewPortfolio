@@ -90,7 +90,7 @@ a:hover {
 
 main {
     width: 100vw;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 #Home {
@@ -298,7 +298,24 @@ main {
 .p1 svg {
     margin: 3px 10px 0px 30px;
 }
-
+#contme{
+    /* background-color: red; */
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.ctn1{
+    height: 550px;
+    width: 80%;
+    /* background-color: green; */
+}
+.ctn1 img{
+    height: 545px;
+    width: 90%;
+}
 footer {
     width: 100vw;
     border: 2px solid black;
@@ -482,5 +499,17 @@ footer {
     }
     .abt{
         height: 150px;
+    }
+    #contme{
+        align-items: center;
+        flex-direction: column;
+    }
+    .manimg{
+        width: 95%;
+        height: 1200px;
+    }
+    .ctn1 img{
+        height: 360px;
+        width: 100%;
     }
 }
