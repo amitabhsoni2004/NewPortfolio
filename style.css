@@ -300,11 +300,38 @@ main {
 }
 
 footer {
-    height: 180px;
     width: 100vw;
     border: 2px solid black;
 }
-
+#about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    gap: 50px;
+    width: 100%;
+    padding: 10px;
+}
+.links{
+    display: flex;
+    gap: 15px;
+}
+.sm{
+    background-color: green;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.moreproj{
+    background-color: yellow;
+    height:400px;
+    width: 90%;
+}
 @media screen and (max-width:600px) {
     header {
         display: flex;
@@ -452,5 +479,8 @@ footer {
     .p1 button {
         padding: 10px 0px 10px 20px;
         font-size: 20px;
+    }
+    #about{
+        flex-direction: column;
     }
 }
