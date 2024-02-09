@@ -6,6 +6,7 @@
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scrollbar-width: 0px;
 }
 
 body {
