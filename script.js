@@ -26,13 +26,16 @@ let hamburger = document.querySelector("#hamburger");
 let close = document.querySelector("#close");
 
 hamburger.addEventListener("click", () => {
-  let logo = document.querySelector(".logo");
-  let listctn1 = document.querySelector(".listctn1");
-  
+  const logo = document.querySelector(".logo"); 
+  const listctn1 = document.querySelector(".listctn1");
+  const close = document.querySelector("#close"); 
+
   hamburger.style.display = "none";
-  listctn1.style.display = "block"; 
+  listctn1.style.display = "flex";
+  listctn1.style.justifyContent = "center"; 
   close.style.display = "block";
 });
+
 
 close.addEventListener("click", () => {
   let logo = document.querySelector(".logo");
@@ -43,3 +46,9 @@ close.addEventListener("click", () => {
   close.style.display = "none";
 });
 
+let listctn1 = document.querySelector(".listctn1");
+listctn1.addEventListener("click",()=>{
+  listctn1.style.display = "none";
+  hamburger.style.display= "block";
+  close.style.display="none";
+})
