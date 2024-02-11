@@ -22,33 +22,52 @@ let intervalID = setInterval(() => {
     }
 }, 300);
 
-let hamburger = document.querySelector("#hamburger");
-let close = document.querySelector("#close");
 
-hamburger.addEventListener("click", () => {
-  const logo = document.querySelector(".logo"); 
-  const listctn1 = document.querySelector(".listctn1");
-  const close = document.querySelector("#close"); 
+const hamburger = document.querySelector("#hamburger");
+const closeIcon = document.querySelector("#close");
+const listctn1 = document.querySelector(".listctn1");
 
-  hamburger.style.display = "none";
-  listctn1.style.display = "flex";
-  listctn1.style.justifyContent = "center"; 
-  close.style.display = "block";
+let mediaQuery = window.matchMedia("(max-width: 600px)");
+function toggleMenu(displayHamburger) {
+  
+  if (mediaQuery.matches) {
+    hamburger.style.display = displayHamburger ? "block" : "none";
+    closeIcon.style.display = displayHamburger ? "none" : "block";
+    listctn1.style.display = displayHamburger ? "none" : "flex";
+    listctn1.style.justifyContent = "center"; 
+  }
+  else{
+    // hamburger.style.display = "none";
+    // closeIcon.style.display= "none"
+    // listctn1.style.display = "flex";
+  }
+}
+
+hamburger.addEventListener("click", () => toggleMenu(false));
+closeIcon.addEventListener("click", () => toggleMenu(true));
+
+document.querySelector(".listctn1").addEventListener("click", () => {
+  
+  let hamburger = document.querySelector("#hamburger"); 
+  let close = document.querySelector("#close"); 
+  let x = window.matchMedia("(max-width: 600px)");
+  if (x.matches) {
+      document.querySelector(".listctn1").style.display = "none";
+      
+      if (hamburger && close) { 
+          hamburger.style.display = "block";
+          close.style.display = "none";
+      }
+  }
 });
-
-
-close.addEventListener("click", () => {
-  let logo = document.querySelector(".logo");
-  let listctn1 = document.querySelector(".listctn1");
-
-  hamburger.style.display = "block"; 
-  listctn1.style.display = "none";
-  close.style.display = "none";
+x.addEventListener('change', e => {
+  if (e.matches) {
+    listctn1.style.display = "none";
+    hamburger.style.display= "block";
+    close.style.display="none";
+  } else {
+    listctn1.style.display = "flex";
+    hamburger.style.display= "none";
+        close.style.display="none";
+  }
 });
-
-let listctn1 = document.querySelector(".listctn1");
-listctn1.addEventListener("click",()=>{
-  listctn1.style.display = "none";
-  hamburger.style.display= "block";
-  close.style.display="none";
-})

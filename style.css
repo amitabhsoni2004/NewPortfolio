@@ -65,7 +65,7 @@ header nav {
 
 .listctn ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     place-content: center;
     align-items: center;
     gap: 0px;
@@ -437,7 +437,7 @@ footer {
     }
 
     #hamburger {
-        display: block;
+        display: flex;
         position: fixed;
         top: 25px;
         left: 88%;
